@@ -3,7 +3,8 @@ layout: "../../layouts/BlogPost.astro"
 title: "Third post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 15 2022"
-heroImage: "/blog/placeholder-hero.jpg"
+heroImage: "/placeholder-hero.jpg"
+thumbnailImage: "/placeholder-about.jpg"
 slug: third-post
 ---
 

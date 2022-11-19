@@ -3,13 +3,14 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
-import { Image } from '@astrojs/image/components'
+import { Image } from '@astrojs/image/components';
 
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.md')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
+
 ---
 
 <!DOCTYPE html>
@@ -37,24 +38,17 @@ const posts = (await Astro.glob('./blog/*.md')).sort(
 	<body class="bg-orange-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-300 break-words leading-6 transition-colors duration-500">
 		<Header />
 		<main class="pt-[56px] px-8 mx-auto max-w-3xl">
-			<section>
+			<section class="pt-6 mb-8">
 				<ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
 				  {
 					posts.map(post => (
 					  <li class="text-center mb-4">
 						<a href={post.url}>
-						
 							
-								<Image
-									//src={import('../../public/blog/placeholder-hero.jpg')}
-									src={post.frontmatter.heroImage}
-									alt={post.frontmatter.title}
-									width={300}
-									height={200}
-									loading="lazy"
-									class="rounded-lg" alt="hero image"
-								/>
-						
+							<img 
+							class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+							width={720} height={360} loading="lazy" src={post.frontmatter.thumbnailImage} alt="" />
+							
 						  <div class="mt-3 text-xl font-bold">
 							{post.frontmatter.title}
 						  </div>

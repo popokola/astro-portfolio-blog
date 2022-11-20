@@ -1,9 +1,10 @@
 ---
+import { SITE_TITLE, HOME_URL } from '../config';
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+	&copy; {today.getFullYear()} <a href={HOME_URL} >Charles Parameswaralingam</a>. All rights reserved.
 </footer>
 <style>
 	footer {

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import { IoServerOutline } from 'react-icons/io5';
 ---
 
 <!DOCTYPE html>
@@ -15,61 +16,62 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 		<main class="pt-[64px] px-8 mx-auto max-w-3xl">
 			<h1 class="text-xl pb-4">🧑‍🚀 Hello, <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">Astronaut!</span></h1>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+				I am Charles, a web developer based in France, I mainly do
+				<span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">Back-End development.</span>
 			</p>
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> 
+				But I do have an eye for the aesthetic of the web, 
+				I like to make things look good and I'm always looking for new ways to improve my skills.
+				I also love doing things that are useful and can help people.
+			</p>
+			<p>
+				I do like to write about my experiences and my projects, 
+				you can find my articles on my 
+				<a href="https://blog.charles-ferreira.fr" class="text-violet-500 hover:text-violet-600">blog</a>.
+			</p>
+			<p >
+				Most of the time, I code in <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">PHP</span>
+				and <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">SQL</span> 
+				<span class="inline-flex"><IoServerOutline /></span> 
+				, but I also like to experiment with other languages and technologies.
+			</p>
+			<p>
+				You can reach me on <a href="https://www.linkedin.com/in/charles-parameswaralingam" class="underline decoration-violet-500 hover:decoration-violet-600">Linkedin</a>
+				or <a href="mailto:contact@charlesparames.com" class="underline decoration-violet-500 hover:decoration-violet-600">Email</a> me!
+			</p>
+			<!-- create a card for showcase projects and a card for personal projects  -->
+
+			<section class="pt-6 mb-8 mx-auto max-w-3xl" >
+				<h2 class="text-xl pt-4 pb-2">👨🏾‍💻 My projects</h2>
+				<ul class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
+					<li class="text-center mb-4">
+						<a href="#" >
+						<img 
+							class="border border-slate-300 dark:border-zinc-700 rounded-xl transform transition duration-500 hover:scale-110"
+							width={720} height={360} loading="lazy" src="/images/vgcreator.png" alt="vgcreator" />
+						</a>
+					</li>
+				</ul>
+				<p class="pt-4"> This a school project written with php, html, css and JavaScript from scratch. </p>
+				<p>
+					I wrote most of the back-end of this website in 
+					<span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">VG-CREATOR</span>.
+				</p>
+				<p> I'm especially proud of the Oauth SDK and the router solution we've built.</p>
+				<p>
+					You can find the source code of this website on 
+					<a href="https://github.com/JustGritt/VG-Creator" class="underline decoration-violet-500 hover:decoration-violet-600">Github</a>.
+				</p>
 				
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code class="dark:text-lg dark:text-zinc-100">src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-			
-			
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-			
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-			
-			
+			</section>
+
+			<div>
+				<h2 class="text-xl pt-4 pb-2">📚 What I'm currently learning</h2>
+				<ul class="list-inside list-none pl-4">
+					<li><a href="https://go.dev/" class="text-violet-500 hover:text-violet-600">Golang</a></li>
+					<li><a href="https://fr.reactjs.org/" class="text-violet-500 hover:text-violet-600">React</a></li>
+				</ul>
+			</div>
 		</main>
 		<Footer />
 	</body>

@@ -4,9 +4,6 @@ export default {
 	darkMode: 'class',
 	theme: {
 		extend: {
-			colors: {
-				'off-white': '#F8F7F4',
-			},
 		},
 	},
 	plugins: [],

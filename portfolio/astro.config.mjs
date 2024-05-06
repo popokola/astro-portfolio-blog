@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://charlesparames.com',
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "server",
   adapter: vercel()

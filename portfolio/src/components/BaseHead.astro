@@ -48,6 +48,9 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Plausible -->
+<script defer data-domain="charlesparames.com" src="https://plausible.io/js/script.js"></script>
+
 <!-- Dark Mode Script -->
 <script is:inline>
 

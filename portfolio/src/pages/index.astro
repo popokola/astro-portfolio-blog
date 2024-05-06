@@ -1,0 +1,14 @@
+---
+import { ConfettiOne } from '../components/ConffetiOne';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="h-screen pt-72">
+		<h1 class="text-4xl font-bold pb-6 pt-6">Hello, Astronaut !</h1>
+		<p class="text-3xl font-medium leading-normal tracking-tight">
+			I'm a Paris-based Web Developer with a passion for creating visually aesthetic websites that seamlessly intertwine design and functionality.
+		</p>
+		<ConfettiOne label="Confetis time!" buttonClassName='text-md cursor-pointer rounded-sm border-2 border-black bg-white px-4 py-2 text-black transition-all duration-500 hover:translate-x-[-2px] hover:translate-y-[0px] hover:rounded-sm hover:shadow-[10px_10px_0px_black] active:translate-x-[0px] active:translate-y-[6px] active:rounded-sm active:shadow-none md:px-8 md:py-4' client:visible />
+	</div>
+</Layout>

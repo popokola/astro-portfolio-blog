@@ -2,16 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import { PiLinkThin } from "react-icons/pi";
 import { ConfettiOne } from '../components/ConffetiOne';
-import { PiDownloadSimpleThin } from "react-icons/pi";
+import { PiDownloadSimple } from "react-icons/pi";
 ---
 <Layout title="cv">
     <section class="flex flex-col sm:max-w-full md:mx-auto md:max-w-lg md:w-screen pt-12 items-center pb-12">
-        <div class="flex items-center gap-4 pb-4">
-            <a href="/cv.pdf" download="charles_parameswaralingam_en" class="text-lg font-medium">
-                <ConfettiOne label="EN" buttonClassName="text-sm rounded-full w-12 h-12" client:visible /> <PiDownloadSimpleThin className="inline-block -ml-2" />
+        <div class="flex items-center gap-1 pb-4">
+            <PiDownloadSimple className="inline-block h-4 w-4 md:h-5 md:w-5 mr-2 " />
+            <a href="/cv.pdf" download="charles_parameswaralingam_en" class="text-lg font-medium  hover:text-neutral-500">
+                <ConfettiOne label="EN" buttonClassName="text-sm rounded-full w-12 h-12" client:visible /> 
             </a>
-            <a href="/cv-fr.pdf" download="charles_parameswaralingam_fr" class="text-lg font-medium">
-                <ConfettiOne label="FR" buttonClassName="text-sm rounded-full w-12 h-12" client:visible />  <PiDownloadSimpleThin className="inline-block -ml-2" />
+            -
+            <a href="/cv-fr.pdf" download="charles_parameswaralingam_fr" class="text-lg font-medium  hover:text-neutral-500">
+                <ConfettiOne label="FR" buttonClassName="text-sm rounded-full w-12 h-12" client:visible />
             </a>
         </div>
         <div class="flex gap-4 mx-auto max-w-screen w-full">
@@ -66,9 +68,9 @@ import { PiDownloadSimpleThin } from "react-icons/pi";
                     </div>
                 </div>
                 <ul class="list-disc list-outside ms-8 pl-[76px] pt-4">
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Developed and maintained modules to support internal and external business logic for PrestaShop</li>
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Conducted regular maintenance and updates to optimize module performance</li>
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Enhanced front-office solutions to ensure user-friendliness and improved interface aesthetics</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Developed and maintained modules to support internal and external business logic for PrestaShop</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Conducted regular maintenance and updates to optimize module performance</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5">Enhanced front-office solutions to ensure user-friendliness and improved interface aesthetics</li>
                 </ul>
             </div>
         </div>
@@ -87,10 +89,10 @@ import { PiDownloadSimpleThin } from "react-icons/pi";
                     </div>
                 </div>
                 <ul class="list-disc list-outside ms-8 pl-[76px] pt-4">
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Implemented the backend infrastructure using API Platform, leveraging its capabilities for creating robust APIs and managing multi-user roles effectively</li>
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Designed and deployed the system on Kubernetes, ensuring scalability and reliability, and adhering to GitOps principles for configuration management</li>
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Utilized ArgoCD for continuous deployment and automated GitOps workflows, streamlining the deployment process and ensuring consistency across environments</li>
-                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-6">Collaborated with my school team to develop frontend components for OdicyLens using Next.js</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Implemented the backend infrastructure using API Platform, leveraging its capabilities for creating robust APIs and managing multi-user roles effectively</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Designed and deployed the system on Kubernetes, ensuring scalability and reliability, and adhering to GitOps principles for configuration management</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Utilized ArgoCD for continuous deployment and automated GitOps workflows, streamlining the deployment process and ensuring consistency across environments</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5">Collaborated with my school team to develop frontend components for OdicyLens using Next.js</li>
                 </ul>
             </div>
         </div>

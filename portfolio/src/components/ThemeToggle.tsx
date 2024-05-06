@@ -49,7 +49,7 @@ export default function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === 'light' ? <PiSunDimLight /> : <PiMoonStarsLight />}
+            {t === 'light' ? <PiSunDimLight className='w-4 h-w md:h-5 md:w-5' /> : <PiMoonStarsLight className='w-4 h-w md:h-5 md:w-5'/>}
           </button>
         )
       })}

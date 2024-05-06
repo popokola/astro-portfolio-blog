@@ -14,20 +14,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
@@ -35,35 +21,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
 			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
 			.last-updated-on {
 				font-style: italic;
 			}
 		</style>
 	</head>
 
-	<body>
+	<body class="bg-neutral-50 dark:bg-zinc-800 text-neutral-900 dark:text-zinc-300 break-words text-wrap leading-6 transition-colors duration-500 h-screen">
 		<Header />
-		<main>
+		<main class="pt-24 px-8 mx-auto max-w-6xl">
 			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+				<div class="">
+					{heroImage && <img width={1080} height={510} src={heroImage} class="border border-slate-300 dark:border-zinc-700 rounded-xl" alt="" />}
 				</div>
 				<div class="prose">
-					<div class="title">
-						<div class="date">
+					<div class="text-center mb-2 leading-4">
+						<div class="mb-2">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
@@ -73,7 +46,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1 class="mb-4">{title}</h1>
 						<hr />
 					</div>
 					<slot />

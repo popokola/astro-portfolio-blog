@@ -55,6 +55,6 @@ export default function ThemeToggle() {
       })}
     </div>
   ) : (
-    <div />
+    <div className="mx-6"/>
   )
 }

@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { PiLinkThin } from "react-icons/pi";
+import { ConfettiOne } from '../components/ConffetiOne';
+import { PiDownloadSimple } from "react-icons/pi";
+import { motion } from "framer-motion"; // Import motion from Framer Motion
+---
+
+<Layout title="cv">
+    <section class="flex flex-col sm:max-w-full md:mx-auto md:max-w-lg md:w-screen pt-12 items-center pb-12">
+
+        {/* Animated section for download links */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="flex items-center gap-1 pb-4" client:visible>
+            <PiDownloadSimple className="inline-block h-4 w-4 md:h-5 md:w-5 mr-2 " />
+            <a href="/cv.pdf" download="charles_parameswaralingam_en" class="text-lg font-medium  hover:text-neutral-500">
+                <ConfettiOne label="EN" buttonClassName="text-sm rounded-full w-12 h-12" client:visible /> 
+            </a>
+            -
+            <a href="/cv-fr.pdf" download="charles_parameswaralingam_fr" class="text-lg font-medium  hover:text-neutral-500">
+                <ConfettiOne label="FR" buttonClassName="text-sm rounded-full w-12 h-12" client:visible />
+            </a>
+        </motion.div>
+
+        {/* Animated section for profile */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3}} className="flex gap-4 mx-auto max-w-screen w-full" client:visible>
+            <div class="mr-4 flex-shrink-0 self-center">
+                <img class="inline-block h-24 w-24 rounded-full" src="/profile.jpg" alt="">
+            </div>
+            <div class="self-center" >
+                <h4 class="text-lg font-medium">Charles Parameswaralingam</h4>
+                <p class="text-neutral-700 dark:text-zinc-300 font-light text-sm">Web Developper in Paris</p>
+            </div>
+        </motion.div>
+
+        {/* Animated section for about */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.6 }} className="flex flex-col justify-center mx-auto max-w-screen w-full pt-12" client:visible>
+            <span class="font-normal"> About </span>
+            <p class="pt-5 text-sm leading-6">
+                Hey there ! I'm a Paris-based web developer with a passion for creating visually aesthetic websites that seamlessly intertwine design and functionality.
+            </p>
+        </motion.div>
+
+        {/* Animated section for skills */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }} className="flex flex-col justify-center mx-auto max-w-screen w-full pt-12" client:visible>
+            <span class="font-normal"> Education </span>
+            <div class="flex pt-5 gap-4 items-start"> <!-- Added items-start class -->
+                <div class="mr-4 flex-shrink-0 font-light text-sm pt-1">
+                    2021 - {new Date().getFullYear()}
+                </div>
+                <div>
+                    <a href="https://www.esgi.fr/" class="text-sm font-medium mr-1 hover:underline">Master of Web Development at ESGI</a> <PiLinkThin className="inline-block" />
+                    <p class="mt-0 text-neutral-700 dark:text-zinc-300 text-sm font-light">Paris</p>
+                </div>
+            </div>
+            <div class="flex pt-8 gap-4 items-start"> <!-- Added items-start class -->
+                <div class="mr-4 flex-shrink-0 font-light text-sm pt-1">
+                    2021 - 2022
+                </div>
+                <div>
+                    <a href="https://www.esgi.fr/" class="text-sm font-medium mr-1 hover:underline">Bachelor of Web Development at ESGI</a> <PiLinkThin className="inline-block" />
+                    <p class="mt-0 text-neutral-700 dark:text-zinc-300 font-light text-sm">Paris</p>
+                </div>
+            </div>
+        </motion.div>
+
+        {/* animation of work expe */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="flex flex-col justify-center mx-auto max-w-screen w-full pt-12" client:visible>
+            <span class="font-normal"> Work Experience </span>
+            <div class="flex flex-col pt-1.5">
+                <div class="flex flex-row gap-4 items-start"> <!-- Added items-start class -->
+                    <div class="mr-4 flex-shrink-0 self-center font-light text-sm">
+                        2021 - {new Date().getFullYear()}
+                    </div>
+                    <div class="flex-grow pt-4">
+                        <a href="https://www.gpasplus.com/" class="text-sm font-medium mr-1 hover:underline">Web Developer at Gpasplus</a>
+                        <p class="mt-0 text-neutral-700 dark:text-zinc-300 font-light text-sm">Paris 10</p>
+                    </div>
+                </div>
+                <ul class="list-disc list-outside ms-8 pl-[76px] pt-4">
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Developed and maintained modules to support internal and external business logic for PrestaShop</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Conducted regular maintenance and updates to optimize module performance</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5">Enhanced front-office solutions to ensure user-friendliness and improved interface aesthetics</li>
+                </ul>
+            </div>
+        </motion.div>
+
+        {/* animation of projects */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.2 }} className="flex flex-col justify-center mx-auto max-w-screen w-full pt-12" client:visible>
+            <span class="font-normal"> Projects </span>
+            <div class="flex flex-col pt-5">
+                <div class="flex flex-row gap-4 items-start"> 
+                    <div class="mr-4 flex-shrink-0 font-light text-sm pt-1"> 
+                       2023 - {new Date().getFullYear()}
+                    </div>
+                    <div class="flex-grow">
+                        <a href="https://www.esgi.fr/" class="text-sm font-medium mr-1 hover:underline">OdicyLens</a>
+                        <p class="mt-1 text-neutral-800 dark:text-zinc-300 font-light text-sm">Developed a comprehensive service platform called OdicyLens as a major project for the first term, aimed at facilitating seamless connections between users and professionals.</p>
+                    </div>
+                </div>
+                <ul class="list-disc list-outside ms-8 pl-[76px] pt-4">
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Implemented the backend infrastructure using API Platform, leveraging its capabilities for creating robust APIs and managing multi-user roles effectively</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Designed and deployed the system on Kubernetes, ensuring scalability and reliability, and adhering to GitOps principles for configuration management</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5 pb-2">Utilized ArgoCD for continuous deployment and automated GitOps workflows, streamlining the deployment process and ensuring consistency across environments</li>
+                    <li class="text-sm text-neutral-700 dark:text-zinc-300 leading-5">Collaborated with my school team to develop frontend components for OdicyLens using Next.js</li>
+                </ul>
+            </div>
+        </motion.div>
+
+
+        {/* animation of contact */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex flex-col justify-center mx-auto max-w-screen w-full pt-12" client:visible>
+            <span class="font-normal"> Contact </span>
+            <div class="flex flex-col pt-6 gap-4">
+                <div class="flex gap-20 items-center"> 
+                    <div class="flex-grow-0 font-light text-sm">
+                        Email
+                    </div>
+                    <div class="flex-grow flex-shrink-0">
+                        <a href="mailto:contact@charlesparames.com" class="text-sm font-medium mr-1 hover:underline">contact@charlesparames.com</a>
+                        <PiLinkThin className="inline-block" />
+                    </div>
+                </div>
+                <div class="flex gap-16 items-center"> 
+                    <div class="flex-grow-0 font-light text-sm">
+                        LinkedIn
+                    </div>
+                    <div class="flex-grow">
+                        <a href="https://www.linkedin.com/in/charles-parameswaralingam/" class="text-sm font-medium mr-1 hover:underline">charles-parameswaralingam</a>
+                        <PiLinkThin className="inline-block" />
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+        
+      
+
+        
+    </section>
+</Layout>

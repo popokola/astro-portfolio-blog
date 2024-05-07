@@ -22,6 +22,9 @@ const containerVariants = {
 
 export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string, label?: string} ) {
   const [mounted, setMounted] = useState(false)
+  //check if the screen is mobile or desktop
+  const [isMobile, setIsMobile] = useState(false)
+
   // Reference to hold the confetti animation instance
   const refAnimationInstance = useRef<any>(null)
 
@@ -37,18 +40,26 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
         ...opts,
         origin: { x: originX, y: originY },
         angle: angle,
-        particleCount: isMobile ? 60 : 250,
+        particleCount: isMobile ? 25 : 230,
         //colors: ["#00FF00", "#008000"],
       })
     }
-  }, [])
+  }, [isMobile])
 
-  //check if the screen is mobile or desktop
-  const [isMobile, setIsMobile] = useState(false)
+
   useEffect(() => {
-    if (window.innerWidth < 768) {
-        console.log('Mobile')
-       setIsMobile(true)
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true)
+      } else {
+        setIsMobile(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
@@ -56,10 +67,10 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
   // Function to trigger confetti shots from different positions
   const fire = useCallback(() => {
     if (isMobile) {
-      makeShot({ spread: 40, startVelocity: 40 }, 1.1, -0.2, -120)
-      makeShot({ spread: 40, startVelocity: 40 }, -0.2, -0.2, 300)
-      makeShot({ spread: 40, startVelocity: 30 }, 1.1, 1, 120)
-      makeShot({ spread: 40, startVelocity: 30 }, -0.2, 1, 60)
+      makeShot({ spread: 50, startVelocity: 40 }, 1.1, -0.2, -120)
+      makeShot({ spread: 50, startVelocity: 40 }, -0.2, -0.2, 300)
+      makeShot({ spread: 50, startVelocity: 40 }, 1.1, 1.1, 120)
+      makeShot({ spread: 50, startVelocity: 40 }, -0.1, 1.1, 60)
     }else {
       makeShot({ spread: 130, startVelocity: 60 }, 1.1, -0.2, -140)
       makeShot({ spread: 130, startVelocity: 60 }, -0.2, -0.1, 315)
@@ -67,7 +78,7 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
       makeShot({ spread: 300, startVelocity: 50 }, -0.1, 1, 160)
     }
 
-  }, [makeShot, isMobile])
+  }, [makeShot])
 
   useEffect(() => {
     setMounted(true)

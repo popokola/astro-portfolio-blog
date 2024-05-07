@@ -24,6 +24,8 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
   const [mounted, setMounted] = useState(false)
   //check if the screen is mobile or desktop
   const [isMobile, setIsMobile] = useState(false)
+  const [detectionComplete, setDetectionComplete] = useState(false); // Indicate if mobile detection is complete
+  const [buttonDisabled, setButtonDisabled] = useState(true); // Disable button until mobile detection is complete
 
   // Reference to hold the confetti animation instance
   const refAnimationInstance = useRef<any>(null)
@@ -40,29 +42,11 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
         ...opts,
         origin: { x: originX, y: originY },
         angle: angle,
-        particleCount: isMobile ? 25 : 230,
+        particleCount: isMobile ? 40 : 230,
         //colors: ["#00FF00", "#008000"],
       })
     }
   }, [isMobile])
-
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
 
   // Function to trigger confetti shots from different positions
   const fire = useCallback(() => {
@@ -81,8 +65,31 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
   }, [makeShot])
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setDetectionComplete(true); // Indicate that mobile detection is complete after resize
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial mobile detection
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    // Enable button once detection is complete
+    if (detectionComplete) {
+      setButtonDisabled(false);
+    }
+  }, [detectionComplete]);
 
   return mounted ? (
     <>
@@ -94,6 +101,7 @@ export function ConfettiOne( {buttonClassName, label}: {buttonClassName: string,
         transition={{ type: "spring", stiffness: 80, delay: 0.33 }}
         variants={containerVariants}
         className={buttonClassName}
+        disabled={buttonDisabled}
       >
         {label ? label : <PiDownloadSimpleThin  />}
       </motion.button>

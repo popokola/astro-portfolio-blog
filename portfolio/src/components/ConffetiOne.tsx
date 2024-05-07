@@ -8,7 +8,7 @@ const canvasStyles: any = {
   position: "absolute",
   pointerEvents: "none",
   width: "100%",
-  height: "100%",
+  height: "100vh",
   zIndex: 1,
   overflow: "hidden",
   top: 0,

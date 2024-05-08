@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Cloud, Clouds } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { PiSpinner, PiArrowLeft } from "react-icons/pi";
+
 
 // Main App component
 export function ErrorLightning() {
@@ -9,8 +11,8 @@ export function ErrorLightning() {
     const [isMobile, setIsMobile] = useState<Boolean>(false);
 
     useEffect(() => {
-        setIsLoaded(true); // Set the loaded state to true when the component mounts
-      }, []);
+        setIsLoaded(true);
+    }, []);
 
     //check if the display screen is mobile
     useEffect(() => {
@@ -20,24 +22,24 @@ export function ErrorLightning() {
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-      }, []);
+    }, []);
 
 return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center rounded-sm bg-gray-300">
+    <div className="relative flex h-screen w-full flex-col items-center justify-center rounded-sm bg-gray-200 md:bg-gray-300">
       {!isLoaded && <Loader />}
       {isLoaded && (
         <>
-          <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-1/2 top-1/2 pb-32 md:pb-16 z-10 -translate-x-1/2 -translate-y-1/2">
             <div className="mx-auto items-center ">
-              <div className="max-auto w-72 text-center  lg:w-96">
+              <div className="max-auto w-72 md:w-96 lg:w-full text-center text-balance break-words">
                 <div className="mx-auto w-full">
-                  <h1 className="text-4xl font-bold tracking-tighter text-neutral-100 md:text-6xl">
+                  <h1 className="text-4xl font-bold tracking-tighter text-neutral-100 md:text-6xl text-pretty">
                     The page you are looking for does not exist. How you got here is a mystery.
                   </h1>
-                  <p className="mx-auto mt-4 max-w-xl text-sm tracking-tight text-neutral-100 md:text-xl">
+                  <p className="mx-auto mt-5 max-w-xl text-sm font-medium tracking-tight text-neutral-100 md:text-xl md:mt-7">
                     But you can click the button below to go back to the homepage.
-                    <a href="/" type="button" className="block mt-4 text-lg font-semibold">
-                        Home
+                    <a href="/" type="button" className="block mt-6 text-lg font-semilbold animate-bounce md:font-bold md:text-xl md:mt-9">
+                        <PiArrowLeft className="inline-block text-xl md:font-semilbold" /> Home 
                     </a>
                   </p>
                 </div>
@@ -58,8 +60,8 @@ return (
 
 function Loader() {
     return (
-      <div className="loader">
-        Loading...
+      <div className="mx-auto">
+        <PiSpinner className="animate-spin text-5xl text-neutral-100" />
       </div>
     );
 }
@@ -67,7 +69,6 @@ function Loader() {
 
 // Rain component to create a rain effect
 function Rain({ isMobile }: { isMobile: Boolean }) {
-    console.log(isMobile);
   const rainCount = isMobile ? 6000 : 10000;
   const rainGeo = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
@@ -86,7 +87,7 @@ function Rain({ isMobile }: { isMobile: Boolean }) {
 
   const rainMat = new THREE.PointsMaterial({
     color: 0xaaaaaa,
-    size: isMobile ? 0.1 : 0.6,
+    size: isMobile ? 0.25 : 0.3,
     transparent: true,
   });
 

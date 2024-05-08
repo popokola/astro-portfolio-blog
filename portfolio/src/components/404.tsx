@@ -68,7 +68,7 @@ function Loader() {
 // Rain component to create a rain effect
 function Rain({ isMobile }: { isMobile: Boolean }) {
     console.log(isMobile);
-  const rainCount = isMobile ? 10000 : 6000;
+  const rainCount = isMobile ? 6000 : 10000;
   const rainGeo = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(rainCount * 3);

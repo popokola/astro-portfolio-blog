@@ -166,14 +166,14 @@ function Sky({ isMobile }: { isMobile: Boolean }) {
           <Cloud
             {...config}
             bounds={[x, y, z]}
-            color=  {isMobile ? "gray" : "red"}
+            color=  {isMobile ? "red" : "gray"}
             seed={2}
             position={[15, 0, 0]}
           />
           <Cloud
             {...config}
             bounds={[x, y, z]}
-            color= {isMobile ? "gray" : "red"}
+            color= {isMobile ? "red" : "gray"}
             seed={3}
             position={[-15, 0, 0]}
           />

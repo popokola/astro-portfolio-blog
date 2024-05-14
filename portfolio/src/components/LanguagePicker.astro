@@ -1,0 +1,39 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+/*
+const svg = {
+  fr: '/flags/fr.svg',
+  en: '/flags/us.svg',
+  ja: '/flags/jp.svg',
+};
+*/
+
+type SvgPaths = {
+  [key in keyof typeof languages]: string;
+};
+
+// Get dynamic svg path
+const svg: SvgPaths = Object.keys(languages).reduce((acc, lang) => {
+  acc[lang as keyof typeof languages] = `/flags/${lang}.svg`;
+  return acc;
+}, {} as SvgPaths);
+
+const currentIndex = Object.keys(languages).indexOf(lang);
+const nextLangIndex = (currentIndex + 1) % Object.keys(languages).length;
+const nextLang = Object.keys(languages)[nextLangIndex];
+const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
+// Use translatePath function to generate the translated path correctly
+const translatedPath = translatePath(currentPath, nextLang);
+---
+
+<a 
+  href={translatedPath} 
+  class="hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 dark:focus:ring-gray-200 rounded-lg md:p-2"
+>
+  <img src={svg[lang]} alt={languages[lang]} class="h-8 md:h-5" />
+</a>

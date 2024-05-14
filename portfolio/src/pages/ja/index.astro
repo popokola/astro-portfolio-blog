@@ -1,16 +1,19 @@
 ---
-import { ConfettiOne } from '../components/ConffetiOne';
-import Layout from '../layouts/Layout.astro';
+import { ConfettiOne } from '../../components/ConffetiOne';
+import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout>
 	<div class="mx-auto max-w-6xl pt-24 md:pt-42">
 		<h1 class="text-lg font-medium py-2.5 md:font-normal md:text-4xl md:py-6">
-			Hello, Astronaut !
+			こんにちは、宇宙飛行士さん！
 		</h1>
 		<p class="text-lg tracking-tight md:text-3xl md:leading-normal md:tracking-tight pb-4 bg-clip-text text-transparent bg-gradient-to-br from-neutral-400 from-28% to-neutral-900 to-70% dark:bg-gradient-to-bl dark:from-zinc-100 dark:from-28% dark:to-zinc-400 dark:to-70%">
-			I'm a Paris-based Web Developer with a passion for creating visually aesthetic websites that seamlessly intertwine design and functionality.
+			Je suis un developer web, passionné par la technologie et le design.
 		</p>
 		<ConfettiOne label="Confetis time!" buttonClassName='text-md cursor-pointer rounded-sm border-2 border-black bg-white px-4 py-2 text-black transition-all duration-500 hover:translate-x-[-2px] hover:translate-y-[0px] hover:rounded-sm hover:shadow-[10px_10px_0px_black] active:translate-x-[0px] active:translate-y-[6px] active:rounded-sm active:shadow-none md:px-8 md:py-4' client:visible />
 	</div>
+
+	
+	  
 </Layout>

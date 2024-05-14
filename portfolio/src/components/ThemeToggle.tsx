@@ -49,12 +49,15 @@ export default function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === 'light' ? <PiSunDimLight className='w-4 h-w md:h-5 md:w-5' /> : <PiMoonStarsLight className='w-4 h-w md:h-5 md:w-5'/>}
+            {t === 'light' ? <PiSunDimLight className='w-4 h-4 md:h-5 md:w-5' /> : <PiMoonStarsLight className='w-4 h-4 md:h-5 md:w-5'/>}
           </button>
         )
       })}
     </div>
   ) : (
-    <div className="mx-6"/>
+    <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-300 dark:bg-zinc-600 animate-pulse">
+      <div className="cursor-pointer rounded-3xl p-2 bg-gray-200 w-6 h-6 md:w-8 md:h-8"></div>
+      <div className="cursor-pointer rounded-3xl p-2 bg-gray-200 w-6 h-6 md:w-8 md:h-8 ml-2"></div>
+    </div>
   )
 }

@@ -8,4 +8,11 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://charlesparames.com',
   integrations: [mdx(), sitemap(), tailwind(), react()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["fr", "en", 'ja', 'ta'],
+    routing: {
+      prefixDefaultLocale: false
+    },
+  }
 });

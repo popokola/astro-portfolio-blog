@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const SvgAnimated = ({ svgContent }) => {
+const SvgAnimated = ({ svgContent: any }) => {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [isCursorOnIcon, setIsCursorOnIcon] = useState(false);
 

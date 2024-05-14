@@ -10,9 +10,13 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), react()],
   i18n: {
     defaultLocale: "en",
-    locales: ["fr", "en", 'ja', 'ta'],
+    locales: ["fr", "en", 'ja'],
     routing: {
       prefixDefaultLocale: false
     },
+    fallback: {
+      ja: "en",
+      fr: "en"
+    }
   }
 });

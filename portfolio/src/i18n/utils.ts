@@ -12,17 +12,8 @@ export function useTranslations(lang: keyof typeof ui) {
   }
 }
 
-/*
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`
-  }
-}
-*/
-
-export function useTranslatedPath(lang: keyof typeof ui) {
-  return function translatePath(path: string, l: string = lang) {
-    console.log('path:', path);
     if (l === defaultLang && !showDefaultLang) {
       //only for the blog path add the /en
       if (path.startsWith('/blog')) {

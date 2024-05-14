@@ -2,7 +2,7 @@ export const languages = {
     en: 'English',
     fr: 'Français',
     ja: '日本語',
-    ta: 'தமிழ்',
+    //ta: 'தமிழ்',
   };
   
   export const showDefaultLang = false;
@@ -28,11 +28,13 @@ export const languages = {
       'nav.cv': '履歴書',
       'nav.source': 'ギットハブ',
     },
+    /*
     ta: {
       'nav.home': '',
       'nav.blog': 'வலைப்பதிவு',
       'nav.cv': 'சிவி',
       'nav.source': 'சோர்ஸ்',
     },
+    */
   } as const;
 

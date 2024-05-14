@@ -40,14 +40,14 @@ const Dropdown = () => {
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"
-          tabIndex= '-1'
+      
         >
           <div className="py-1" role="none">
             <a
               href="#"
               className="text-gray-700 group flex items-center px-4 py-2 text-sm"
               role="menuitem"
-              tabIndex="-1"
+              
               id="menu-item-0"
             >
               <svg
@@ -65,7 +65,7 @@ const Dropdown = () => {
               href="#"
               className="text-gray-700 group flex items-center px-4 py-2 text-sm"
               role="menuitem"
-              tabIndex="-1"
+              
               id="menu-item-1"
             >
               <svg

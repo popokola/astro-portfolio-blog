@@ -5,7 +5,7 @@ const SvgAnimated = ({ svgContent }) => {
   const [isCursorOnIcon, setIsCursorOnIcon] = useState(false);
 
   useEffect(() => {
-    const updateCursorPosition = (event) => {
+    const updateCursorPosition = (event: any) => {
       const svgElement = document.getElementById("SvgAnimated");
       if (!svgElement) return;
 
